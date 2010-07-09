@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.5.8</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1 id='sinatra_api_docs'>Sinatra API Docs</h1>
+
+<p>Allows you to add inline documentation to a Sinatra app and have a web-based documentation browser be available to you.</p>
+
+<h2 id='documentation_format'>Documentation Format</h2>
+
+<pre class="code"><span class='register identifier id'>register</span> <span class='Sinatra constant id'>Sinatra</span><span class='colon2 op'>::</span><span class='APIDocs constant id'>APIDocs</span>
+
+<span class='section identifier id'>section</span>  <span class='string val'>&quot;Applications&quot;</span>
+
+<span class='desc identifier id'>desc</span>     <span class='string val'>&quot;Create an application.&quot;</span>
+<span class='param identifier id'>param</span>    <span class='string val'>&quot;name&quot;</span><span class='comma token'>,</span>  <span class='string val'>&quot;the name of the application to create&quot;</span>
+<span class='param identifier id'>param</span>    <span class='string val'>&quot;stack&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;[OPTIONAL] the stack on which to create the application&quot;</span>
+
+<span class='request identifier id'>request</span>  <span class='string val'>&quot;POST /apps.json\&quot;\nname=example&amp;stack=bamboo-ree-1.8.7\n&quot;</span>
+
+<span class='response identifier id'>response</span> <span class='string val'>&quot;{\n\&quot;id\&quot;:         1,\n\&quot;name\&quot;:       \&quot;example\&quot;,\n\&quot;owner\&quot;:      \&quot;user@example.org\&quot;,\n\&quot;created_at\&quot;: \&quot;Sat Jan 01 00:00:00 UTC 2000\&quot;,\n\&quot;stack\&quot;:      \&quot;bamboo-ree-1.8.7\&quot;,\n\&quot;slug_size\&quot;:  1000000,\n\&quot;repo_size\&quot;:  500000,\n\&quot;dynos\&quot;:      1,\n\&quot;workers\&quot;:    0\n}\n&quot;</span>
+
+<span class='post identifier id'>post</span> <span class='string val'>&quot;/apps.json&quot;</span> <span class='do do kw'>do</span>
+  <span class='dot3 op'>...</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<h2 id='webbased_browser'>Web-based browser</h2>
+
+<pre class="code"><span class='map identifier id'>map</span> <span class='string val'>&quot;/docs&quot;</span> <span class='do do kw'>do</span>
+  <span class='run identifier id'>run</span> <span class='Sinatra constant id'>Sinatra</span><span class='colon2 op'>::</span><span class='APIDocs constant id'>APIDocs</span><span class='colon2 op'>::</span><span class='Viewer constant id'>Viewer</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='YourSinatraApp constant id'>YourSinatraApp</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre></div></div>
+    
+    <div id="footer">
+  Generated on Tue Jun 29 15:36:42 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.8 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

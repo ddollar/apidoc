@@ -1,0 +1,28 @@
+%h2= section
+
+- docs.each_with_index do |doc, index|
+
+  .api
+
+    .url
+      %a{ :name => index }
+        = doc[:verb].upcase
+        = doc[:uri]
+
+    .description
+      = doc[:description]
+
+    - if (doc[:params] || []).length > 0
+      .params
+        - doc[:params].each do |param|
+          .param
+            .type{ :class => (param[:required] && "required") }
+              = (param[:required]) ? "REQUIRED" : "OPTIONAL"
+            .name= escape_html(param[:name])
+            .description= param[:description]
+
+    %code.request
+      = code doc[:request]
+
+    %code.response
+      = code doc[:response]

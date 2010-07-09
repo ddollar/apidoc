@@ -1,0 +1,13 @@
+#index
+  - sections.each do |section|
+
+    .section
+      %h2
+        %a{ :href => "/#{urlize_section(section)}" }= section
+
+      - docs_in_section(docs, urlize_section(section)).each_with_index do |method, index|
+        .summarydoc
+          .path
+            %a{ :href => "/#{urlize_section(section)}##{index}" }
+              = "#{method[:verb].upcase} #{method[:uri]}"
+          .description= method[:description]
